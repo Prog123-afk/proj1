@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+{% block content %}
+<h1>Quiz</h1>
+{% for quiz in quizs %}
+<div>
+  <a href="{% url 'quiz' quiz.id%}">
+    {{quiz.title}}
+  </a>
+  <br>
+  <br>
+  Score: {{quiz.reward}}
+</div>
+{% endfor %}
+{% endblock %}

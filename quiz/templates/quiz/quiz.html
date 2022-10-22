@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h2>{{quiz.title}}</h2>
+Total Question: {{ques.count}}
+<br>
+<br>
+<form action="" method="post">
+  {% csrf_token %}
+  {% for que in ques %}
+    <label for="q{{que.id}}">{{que.que}}</label>
+    <input type="text" name="q{{que.id}}">
+    <br><br>
+  {% endfor %}
+  <input type="submit" value="Submit">
+</form>
+{% endblock %}
